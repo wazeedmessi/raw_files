@@ -1,0 +1,68 @@
+DATA SORTING (ORDER BY)
+
+Data Sorting means arranging query results in specific order
+Ascending order ( small to large)
+Descending Order (large to small)
+
+syn: select column1,column2
+from tablename
+order by [asc or desc];
+
+emp_id|first_name|last_name|department|salary|email                     |age|
+------+----------+---------+----------+------+--------------------------+---+
+     1|Alice     |Smith    |IT        | 50000|alice.smith@gmail.com     | 25|
+     2|Bob       |Johnson  |HR        | 30000|bob.johnson@gmail.com     | 30|
+     3|Charlie   |Williams |Sales     | 25000|charlie.williams@gmail.com| 28|
+     4|David     |Brown    |IT        | 45000|david.brown@gmail.com     | 35|
+     5|Eva       |Jones    |Finance   | 60000|eva.jones@gmail.com       | 40|
+     6|Frank     |Garcia   |Sales     | 20000|frank.garcia@gmail.com    | 26|
+     7|Grace     |Miller   |IT        | 55000|grace.miller@gmail.com    | 29|
+     8|Hank      |Davis    |HR        | 32000|hank.davis@gmail.com      | 31|
+     9|Ivy       |Rodriguez|Finance   | 70000|ivy.rodriguez@gmail.com   | 38|
+    10|Jack      |Martinez |Sales     | 27000|jack.martinez@gmail.com   | 27|
+    11|Kate      |Hernandez|IT        | 48000|kate.hernandez@gmail.com  | 33|
+    12|Leo       |Lopez    |HR        | 35000|leo.lopez@gmail.com       | 36|
+    13|Mia       |Gonzalez |Finance   | 65000|mia.gonzalez@gmail.com    | 42|
+    14|Nina      |Wilson   |Sales     | 22000|nina.wilson@gmail.com     | 24|
+    15|Oscar     |Anderson |IT        | 52000|oscar.anderson@gmail.com  | 37|
+    16|Paul      |Thomas   |HR        | 28000|paul.thomas@gmail.com     | 34|
+    17|Quinn     |Taylor   |Finance   | 72000|quinn.taylor@gmail.com    | 41|
+    18|Rose      |Moore    |Sales     | 26000|rose.moore@gmail.com      | 23|
+    19|Steve     |Jackson  |IT        | 53000|steve.jackson@gmail.com   | 39|
+    20|Tom       |Martin   |HR        | 31000|tom.martin@gmail.com      | 32|
+    21| mohan    |krishna  |          | 50000|mk57@gmail.com            | 33|
+
+
+SELECT * 
+FROM employees
+ORDER BY salary DESC; -- arrange rows in desc order by salary (highest to lowest)
+
+
+
+SELECT * 
+FROM employees
+ORDER BY salary asc; -- arrange rows in asc order by salary (lowest to highest)
+
+--Sorting by Multiple Columns
+
+SELECT * 
+FROM employees
+ORDER BY department DESC ,salary ASC; 
+--First sorts by department
+--Then within each department → sorts by salary
+
+--Sorting by Column Position
+SELECT emp_id, first_name, salary
+FROM employees
+ORDER BY 3 DESC;(3 refers to the third column (salary))
+
+--Sorting by Alias
+SELECT emp_id,first_name,last_name,department,salary,salary * 12 AS annual_salary
+FROM employees
+ORDER BY annual_salary DESC; 
+
+--Sorting with Where
+SELECT * 
+FROM employees
+WHERE department = 'IT'
+ORDER BY salary DESC; -- first where clause will execute and gather the dept col and then salary col will sort by highest to lowest

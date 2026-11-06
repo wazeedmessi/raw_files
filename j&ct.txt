@@ -1,0 +1,77 @@
+--3 tables with joins
+
+select e.emp_id,
+    concat(e.first_name,' ',e.last_name )emp_name,
+    e.department,
+    e.salary,
+    m.max_sal,
+    m.min_sal,
+    m.avg_sal,
+concat(mgr.first_name,' ',mgr.last_name ) AS manager_name ,
+mgr.salary as manager_sal from emp_mgr e 
+join (select department, 
+max(salary) as max_sal,
+min(salary) as min_sal,
+avg(salary) as avg_sal
+from emp_mgr
+group by department)m
+on e.department = m.department 
+left join emp_mgr mgr
+on e.mgr_id = mgr.emp_id 
+
+-- with single cte and join
+
+with dept_cte as(
+select department, 
+max(salary) as max_sal,
+min(salary) as min_sal
+from emp_mgr
+group by department
+)
+
+select e.emp_id ,
+concat(e.first_name,' ',e.last_name )emp_name,
+e.department , e.salary ,
+d.min_sal,d.max_sal,
+concat(mgr.first_name,' ',mgr.last_name )manager_name,
+mgr.salary
+from emp_mgr e
+
+join dept_cte d
+on d.department = e.department
+
+left join emp_mgr mgr
+on e.mgr_id = mgr.emp_id 
+
+
+-- with 3 cte 
+
+with dept_cte as(
+select department, 
+max(salary) as max_sal,
+min(salary) as min_sal
+from emp_mgr
+group by department
+),
+emp_cte as(
+select emp_id , mgr_id,
+concat(first_name,' ',last_name )emp_name,
+department , salary 
+from emp_mgr
+),
+mgr_cte as (
+select emp_id,concat(first_name,' ',last_name )manager_name,
+salary as manager_sal
+from emp_mgr)
+
+select
+e.emp_id,e.emp_name,e.department,e.salary,
+d.max_sal,d.min_sal,
+m.manager_name,m.manager_sal
+
+from emp_cte e 
+join dept_cte d
+on e.department = d.department
+
+left join mgr_cte m
+on e.mgr_id = m.emp_id

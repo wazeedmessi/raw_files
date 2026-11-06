@@ -1,0 +1,82 @@
+create database practice;
+
+create table students
+(
+id int,
+first_name varchar(30),
+last_name varchar(30),
+email varchar(30),
+mobile varchar(18),
+address varchar(100)
+);
+
+/* this creates a table with empty structure
+ 
+in the above table I need to add some more columns so I use ALTER to modify the table 
+
+these CREATE,ALTER,DROP,TRUNCATE are DDL Commands */
+
+-- so now we use ALTER to modify the table 
+
+alter table students add column class varchar(20);
+
+--so this add an new column in the table
+
+/* to insert values into this table we use DML commands like
+INSERT → add data
+UPDATE → modify data
+DELETE → remove data
+SELECT → retrieve data */
+
+insert into students values (1,'Alan','Walker','aw345@gmail.com','9696969696','Delhi','10thclass');
+insert into students values (2,'Alan','Walker','aw345@gmail.com','9696969696','Delhi','10thclass');
+insert into students values (3,'Reena','jones','rj36@gmail.com','9097070890','Mumbai','12thclass');
+insert into students values (4,'Aman','Mishra','aman@gmail.com','9996688021','Hyderabad','9thclass');
+insert into students values (5,'Sean','Paul','seanpaul@gmail.com','9032990066','Banglore','11thclass');
+
+-- these values are now entered into the table to check these values haven't entered aren't we can use SELECT query
+
+SELECT * from students;
+
+/* here we can see the two duplicate entries in the table we can change it by using UPDATE query */
+
+UPDATE students 
+SET first_name = 'Jane',
+    last_name = 'Walker',
+    email = 'jane@gmail.com',
+    mobile = '9977665544',
+    city = 'Vizag'
+WHERE id = 2;
+
+-- here we are not updating class value so that it remains same 
+-- to rename the column name we use RENAME
+
+alter table students rename column address to city;
+
+--The DELETE query in SQL is used to remove data (rows) from a table.
+
+DELETE FROM students
+WHERE id = 4;
+
+--IF WE need to delete a record we can took a backup of that 
+create table students_backup as
+select first_name,last_name,email,mobile as phone,city
+from students where id = 4;
+
+--by using orderby clause we can sort data in ascending and descending formats
+
+SELECT * FROM students
+ORDER BY city ASC; -- this can sort data in ascending order 
+
+SELECT * FROM students
+ORDER BY id desc; -- this sort data in descending order based on student id
+
+
+insert into students values (5,'Arjun','das','ajd@gmail.com','9109109690','Delhi','12thclass'),
+ (6,'leo','lance','leo@gmail.com','9890969494','mumbai','9thclass');
+
+--GROUP BY is used in SQL to group rows that have the same values in one or more columns
+
+SELECT city, COUNT(*)
+FROM students
+GROUP BY city;

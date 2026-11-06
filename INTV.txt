@@ -1,0 +1,17 @@
+Hi, I'm Wazeed. I have 4 years of experience as a Data Engineer, working on data pipelines, ETL development, SQL optimization, and cloud-based data solutions. My experience includes building scalable data workflows, maintaining data quality, and supporting analytics and reporting teams with reliable datasets. I've worked closely with cross-functional teams to understand business requirements and deliver efficient data solutions. I'm passionate about data engineering and enjoy solving complex data problems. I'm now looking for an opportunity where I can apply my experience, work on challenging projects, and continue growing professionally.
+
+
+
+Good morning, and thank you for giving me this opportunity.
+
+My name is Wazeed. I have around four years of experience in Data Engineering, with a primary focus on Azure cloud technologies and building data integration solutions.
+
+In my experience, I have worked extensively with Azure Data Factory to build and maintain ETL pipelines, Azure Data Lake Storage for data storage, Azure Databricks for data transformation, and SQL for querying and managing data. I have also used Python for automation, data processing, and scripting, along with Git for version control.
+
+One of the projects I worked on involved ingesting data from multiple source systems into Azure Data Lake using Azure Data Factory. I designed parameterized pipelines, implemented incremental data loading, used stored procedures where required, and monitored pipeline executions. I also worked on data cleansing and transformation using Databricks before loading the processed data into the target system.
+
+I enjoy solving data-related problems and continuously improving my technical skills. Currently, I am strengthening my knowledge of advanced Python, SQL optimization, and Azure Data Engineering concepts.
+
+I am now looking for an opportunity where I can contribute to a challenging Data Engineering team, work on large-scale cloud data solutions, and continue learning while delivering business value.
+
+Thank you.

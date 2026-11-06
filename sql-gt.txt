@@ -1,0 +1,83 @@
+--SINGLE ROW FUNCTIONS OR SCALAR FUNCTIONS
+_______________________________________________________________________________________________________________
+
+-- CHARACTER FUNCTIONS
+-- NUMERIC FUNCTIONS
+-- DATE FUNCTIONS
+--CONVERSION FUNCTIONS
+-- GENERAL FUNCTIONS
+
+
+-- CHARACTER FUNCTIONS
+--UPPER,LOWER,INITCAP,LENGTH,SUBSTR,CONCAT & TRIM
+
+select * from employees;
+
+select UPPER(first_name) from employees;
+
+select LOWER(department ) from employees;
+
+select initcap(department) from employees;
+
+select length(first_name) from employees;
+
+select substr(first_name,1,5) from employees;
+
+select concat(first_name,' ',last_name)as full_name from employees;
+
+select trim (first_name) from employees;
+
+select length(trim(concat(first_name,last_name))) from employees;
+
+-- NUMERIC FUNCTIONS
+--CEIL,FLOOR,ROUND,ABS
+
+select ceil(12.002),floor(14.986),round(14.4),round(14.53),abs(-100), abs(100);
+
+-- DATE FUNCTIONS
+ select current_date,current_time,current_timestamp;
+
+select current_date - interval '2years';
+select current_date + interval '2years';
+
+select current_date - interval '9months';
+
+--CONVERSION FUNCTIONS
+--CAST
+SELECT CAST('100' AS INT);
+SELECT CAST(salary AS VARCHAR) FROM employees;
+SELECT CAST(current_date AS VARCHAR);
+
+-- GENERAL FUNCTIONS
+--coalesce,case
+
+--COALESCE
+
+select *,coalesce(department,'others') from employees;
+
+select emp_id,concat(first_name,last_name)full_name,coalesce(department,'others')new_dpt from employees;
+
+
+-- CASE
+
+select * ,
+case
+	when salary>50000 then 'High Salaried'
+	when salary >= 30000 and salary <= 50000 then 'Medium'
+	else 'Low'
+end from employees;
+
+select 
+emp_id,concat(first_name,last_name)full_name,coalesce(department,'others')new_dpt ,salary,
+(case
+	when salary > 1000 then salary+salary*0.25
+end)as inc_sal
+from employees
+order by inc_sal desc
+limit 1 offset 5;
+
+
+--AGGREGATE FUNCTIONS or MULTI ROW FUNCTIONS
+______________________________________________________________________________________________________________________________________________
+
+

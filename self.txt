@@ -1,0 +1,34 @@
+yeah ! 
+
+
+
+my is wazeed i have around 5 years of exp into IT releavent exp of 3y & 8m into azure data eng 
+
+with primary focus on  azure cloud technologies an building data integration solutions 
+
+
+
+i have started my career as an sql developer and then i get chance to work as data engineer  
+
+
+
+in my exp i have worked with adf to build and maintain ETL and ELT pipeines  ADLS for storage 
+
+Azure DB and pyspark for transformations and SQL for mainly queying and managing data 
+
+
+
+in my project i worked on involved ingesting data from multiple source systems to ADLS using ADF
+
+using Activities like Lookup , Foreach and copy Data activites and many more and then perform cleansing and transformations using databricks 
+
+and pysprk before loading the processed data into target systems
+
+
+
+I am now looking for an opportunity where I can contribute and work on large-scale cloud data solutions, and continue learning while delivering business value.
+
+
+
+Thank you.
+

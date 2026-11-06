@@ -1,0 +1,20 @@
+QDwE5CcH6vjkmKQRYAH6Nqww  - apikeymaps
+
+https://www.searchapi.io/api/v1/search?engine=google_maps&q=restaurants+near+me&l1=17.497799, 78.394895&api_key=QDwE5CcH6vjkmKQRYAH6Nqww
+
+
+https://www.searchapi.io/api/v1 = base_url
+
+
+search?engine=google_maps&q=restaurants near me&gl=in&api_key=QDwE5CcH6vjkmKQRYAH6Nqww = relative_url
+
+
+Q = query 
+
+gl = geo graphic location 
+
+
+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   -- patfined100s git token
+
+
+C:\Users\Dell\AppData\Local\Microsoft\Windows\INetCache\IE\H71C7D4E
